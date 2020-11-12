@@ -10,21 +10,21 @@ public enum DriverEnum {
 	/**
 	 * chrome浏览器
 	 */
-	CHROME("chrome", "chromedriver-86.0.4240.22.exe"),
+	CHROME("chrome", "chromedriver.exe"),
 	/**
 	 * firefox浏览器
 	 */
-	FIREFOX("firefox", "geckodriver-0.28.exe"),
+	FIREFOX("firefox", "geckodriver.exe"),
 
 	/**
 	 * EDGE浏览器
 	 */
-	EDGE("edge", "msedgedriver-88.0.696.0.exe"),
+	EDGE("edge", "msedgedriver.exe"),
 
 	/**
 	 * 默认使用chrome浏览器
 	 */
-	DEFAULT("chrome", "chromedriver-86.0.4240.22.exe");
+	DEFAULT("chrome", "chromedriver.exe");
 
 	private String browserName;
 

@@ -61,4 +61,5 @@ public class BaseTest {
 ```
 
 ### 注意
-- 不管使用chrome还是firefox浏览器，需要提前在电脑上设置环境变量,暂时还没有实现driver设置，后期会添加
+- 已经增加了driver，执行的时候，需要注意driver与本地浏览器的版本是否匹配，如果不匹配需要自己进行替换
+- driver 的存放路径在根目录的driver目录下，直接替换即可
