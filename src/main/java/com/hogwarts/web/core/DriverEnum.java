@@ -7,23 +7,45 @@ package com.hogwarts.web.core;
  */
 public enum DriverEnum {
 
-	CHROME("chrome"),
-	FIREFOX("firefox"),
-	DEFAULT("chrome");
+	/**
+	 * chrome浏览器
+	 */
+	CHROME("chrome", "chromedriver-86.0.4240.22.exe"),
+	/**
+	 * firefox浏览器
+	 */
+	FIREFOX("firefox", "geckodriver-0.28.exe"),
 
-	private String name;
+	/**
+	 * EDGE浏览器
+	 */
+	EDGE("edge", "msedgedriver-88.0.696.0.exe"),
 
-	public String getName() {
-		return name;
+	/**
+	 * 默认使用chrome浏览器
+	 */
+	DEFAULT("chrome", "chromedriver-86.0.4240.22.exe");
+
+	private String browserName;
+
+	private String driverVersion;
+
+	public String getBrowserName() {
+		return browserName;
 	}
 
-	DriverEnum(String name) {
-		this.name = name;
+	public String getDriverVersion() {
+		return driverVersion;
+	}
+
+	DriverEnum(String browserName, String driverVersion) {
+		this.browserName = browserName;
+		this.driverVersion = driverVersion;
 	}
 
 	public static DriverEnum getEnum(String browser){
 		for (DriverEnum driverEnum : DriverEnum.values()) {
-			if (driverEnum.getName().equalsIgnoreCase(browser)) {
+			if (driverEnum.getBrowserName().equalsIgnoreCase(browser)) {
 				return driverEnum;
 			}
 		}

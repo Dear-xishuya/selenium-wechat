@@ -17,7 +17,7 @@ import java.util.Set;
 /**
  * @author fyh
  * @date 2020/11/11
- * @desc 登录方法
+ * @desc 登录
  */
 public class LoginPage extends BasePage {
 

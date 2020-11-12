@@ -52,6 +52,13 @@ public class BaseTest {
 	public void testAddMember(@CsvToMember Member member){}
 ```
 
+- 在每个测试类中需要加上如下的注解:
+```java
+@ExtendWith(ChromeParameterResolver.class)
+
+// ChromeParameterResolver表示用chrome浏览器
+// FirefoxParameterResolver表示用火狐浏览器
+```
 
 ### 注意
 - 不管使用chrome还是firefox浏览器，需要提前在电脑上设置环境变量,暂时还没有实现driver设置，后期会添加

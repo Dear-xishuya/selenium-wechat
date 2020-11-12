@@ -18,9 +18,10 @@ public class BaseTest {
 		return driver;
 	}
 
+
 	@BeforeAll
-	public static void init(){
-		driver = DriverFactory.getDriver().getBrowser("chrome");
+	public static void init(String browser){
+		driver = DriverFactory.getDriver().getBrowser(browser);
 	}
 
 	@AfterAll

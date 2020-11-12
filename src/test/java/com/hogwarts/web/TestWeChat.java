@@ -6,6 +6,8 @@ import com.hogwarts.web.page.AddMemberPage;
 import com.hogwarts.web.page.AddressBookPage;
 import com.hogwarts.web.page.HomePage;
 import com.hogwarts.web.page.LoginPage;
+import com.hogwarts.web.resolver.ChromeParameterResolver;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +19,7 @@ import java.io.IOException;
  * @date 2020/11/12
  * @desc 测试企业微信
  */
+@ExtendWith(ChromeParameterResolver.class)
 public class TestWeChat extends BaseTest {
 
 	private WebDriver driver;
