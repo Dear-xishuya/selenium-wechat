@@ -19,10 +19,12 @@ import java.io.IOException;
  */
 public class TestWeChat extends BaseTest {
 
+	private WebDriver driver;
+
 	@ParameterizedTest
 	@CsvFileSource(files = "data/testdata/wechat.csv", numLinesToSkip = 1)
 	public void testAddMember(@CsvToMember Member member){
-		WebDriver driver = getDriver();
+		driver = getDriver();
 		try {
 			// 登录
 			LoginPage loginPage = new LoginPage(driver);

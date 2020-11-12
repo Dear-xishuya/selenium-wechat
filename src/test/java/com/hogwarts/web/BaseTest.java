@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 /**
  * @author fyh
  * @date 2020/11/12
- * @desc
+ * @desc  测试类的基类，初始化driver与关闭driver
  */
 public class BaseTest {
 
