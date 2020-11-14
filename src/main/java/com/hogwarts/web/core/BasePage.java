@@ -61,7 +61,7 @@ public abstract class BasePage {
 	 * @param element	元素
 	 * @param waitTime	等待时间
 	 */
-	private void click(WebElement element, long waitTime){
+	public void click(WebElement element, long waitTime){
 		WebElement webElement = waitExplicit(waitTime).until(ExpectedConditions.elementToBeClickable(element));
 		try{
 			webElement.click();
@@ -70,7 +70,7 @@ public abstract class BasePage {
 		}
 	}
 
-	private WebDriverWait waitExplicit(long waitTime) {
+	public WebDriverWait waitExplicit(long waitTime) {
 		WebDriverWait wait;
 		if (waitTime == 0) {
 			wait = new WebDriverWait(driver, ConfigPropInfo.DRIVER_EXPLICIT_WAIT);

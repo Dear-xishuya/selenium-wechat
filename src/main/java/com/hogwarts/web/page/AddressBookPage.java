@@ -18,7 +18,6 @@ public class AddressBookPage extends BasePage {
 	@FindBy(linkText = "添加成员")
 	private WebElement addMemberButton;
 
-
 	public AddressBookPage(WebDriver driver) {
 		super(driver);
 	}

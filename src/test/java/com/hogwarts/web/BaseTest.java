@@ -1,6 +1,7 @@
 package com.hogwarts.web;
 
 import com.hogwarts.web.core.DriverFactory;
+import com.hogwarts.web.model.Browser;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
@@ -18,10 +19,9 @@ public class BaseTest {
 		return driver;
 	}
 
-
 	@BeforeAll
-	public static void init(String browser){
-		driver = DriverFactory.getDriver().getBrowser(browser);
+	public static void init(Browser browser){
+		driver = DriverFactory.getDriver().getBrowser(browser.getBrowserName());
 	}
 
 	@AfterAll
