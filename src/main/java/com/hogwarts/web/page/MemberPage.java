@@ -14,7 +14,7 @@ import java.util.List;
  * @date 2020/11/12
  * @desc 添加成员页面
  */
-public class AddMemberPage extends BasePage {
+public class MemberPage extends BasePage {
 
 	/**
 	 * 姓名
@@ -91,7 +91,7 @@ public class AddMemberPage extends BasePage {
 	@FindBy(linkText = "保存")
 	public WebElement saveBtn;
 
-	public AddMemberPage(WebDriver driver) {
+	public MemberPage(WebDriver driver) {
 		super(driver);
 	}
 
@@ -99,7 +99,7 @@ public class AddMemberPage extends BasePage {
 	 * 添加成员
 	 * @param member 成员类
 	 */
-	public void addMember(Member member){
+	public MemberPage addMember(Member member){
 		// 输入信息
 		inputText(userName, member.getUserName());
 		inputText(englishName, member.getEnglishName());
@@ -112,5 +112,7 @@ public class AddMemberPage extends BasePage {
 
 		// 点击保存按钮
 		click(saveBtn, true);
+
+		return this;
 	}
 }

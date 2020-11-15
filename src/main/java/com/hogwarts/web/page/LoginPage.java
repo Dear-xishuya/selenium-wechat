@@ -33,15 +33,23 @@ public class LoginPage extends BasePage {
 	/**
 	 * 登录
 	 */
-	public void login() throws IOException {
-		openPageByMax(LOGIN_URL);
-		TypeReference<List<HashMap<String, Object>>> typeReference = new TypeReference<List<HashMap<String, Object>>>() {};
-		List<HashMap<String, Object>> hashMapList = objectMapper.readValue(new File(ConfigPropInfo.COOKIE_FILE), typeReference);
-		hashMapList.forEach(cookieMap->{
-			this.getDriver().manage().addCookie(new Cookie(cookieMap.get("name").toString(), cookieMap.get("value").toString()));
-		});
+	public HomePage login() throws IOException, InterruptedException {
+		File file = new File(ConfigPropInfo.COOKIE_FILE);
+		if (file.exists()){
+			openPageByMax(LOGIN_URL);
+			TypeReference<List<HashMap<String, Object>>> typeReference = new TypeReference<List<HashMap<String, Object>>>() {};
+			List<HashMap<String, Object>> hashMapList = objectMapper.readValue(new File(ConfigPropInfo.COOKIE_FILE), typeReference);
+			hashMapList.forEach(cookieMap->{
+				this.getDriver().manage().addCookie(new Cookie(cookieMap.get("name").toString(), cookieMap.get("value").toString()));
+			});
 
-		refreshPage();
+			refreshPage();
+		}else {
+			generateLoginCookie();
+		}
+
+		return new HomePage(this.getDriver());
+
 	}
 
 	/**

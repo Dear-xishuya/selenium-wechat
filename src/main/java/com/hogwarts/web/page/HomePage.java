@@ -25,7 +25,9 @@ public class HomePage extends BasePage {
 	/**
 	 * 单击添加成员按钮，进入通讯录管理页面
 	 */
-	public void clickButton(){
+	public ContactPage contact(){
 		click(addMemberButton, true);
+
+		return new ContactPage(this.getDriver());
 	}
 }
